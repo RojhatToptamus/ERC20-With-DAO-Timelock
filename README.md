@@ -1,4 +1,4 @@
-# Basic ERC20 Token Contract with a Governor Contract(Without a Timelock Controller Contract)
+# Basic ERC20 Token Contract with a Governor(DAO) and Timelock 
 This project has a basic ERC20 Contract which can be governed by the Governor Contract. Please check RojhatToptamus/ERC20-With-DAO repository for the version without a Timelock Controller.
 
 Used Technologies
