@@ -1,0 +1,21 @@
+{
+  "name": "hardhat-project",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.5",
+    "@nomiclabs/hardhat-web3": "^2.0.0",
+    "@openzeppelin/hardhat-defender": "^1.6.0",
+    "@openzeppelin/hardhat-upgrades": "^1.14.0",
+    "@openzeppelin/test-helpers": "^0.5.15",
+    "dotenv": "^16.0.0",
+    "ethers": "^5.5.4",
+    "hardhat": "^2.8.4",
+    "web3": "^1.7.0"
+  },
+  "dependencies": {
+    "@ethereumjs/vm": "^5.7.1",
+    "@ethersproject/bignumber": "^5.5.0",
+    "@openzeppelin/contracts": "^4.5.0",
+    "big-number": "^2.0.0",
+    "expect.js": "^0.3.1"
+  }
+}
