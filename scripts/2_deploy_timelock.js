@@ -3,10 +3,6 @@
 
 async function main() { 
 
-    var delayTime = 150;
-    var proposersArray = ['0x20D60aA2F7416057069352AC1E694772c407FD05'];
-    var executorsArray = ['0x20D60aA2F7416057069352AC1E694772c407FD05'];
-
     const [deployer] = await ethers.getSigners();
   
     console.log(
@@ -14,13 +10,16 @@ async function main() {
       deployer.address
     );
     
-    console.log("Account balance:", (await deployer.getBalance()).toString()); 
+    var delayTime = 150;
+    var proposersArray = [];
+    var executorsArray = ['0x0000000000000000000000000000000000000000'];
+    
   
-    const Token = await ethers.getContractFactory('contracts/TimelockController.sol:TimelockController');
-
-    const token = await Token.deploy(delayTime, proposersArray, executorsArray);
-
-    console.log("Timelock address:", token.address);
+    const TimelockController = await ethers.getContractFactory('contracts/TimelockController.sol:TimelockController');
+    const timelock = await TimelockController.deploy(delayTime, proposersArray, executorsArray);
+    await timelock.deployed()
+    timelockAddress = timelock.address
+    console.log("Timelock Contract deployed at: "+timelockAddress)
 
   }
   
