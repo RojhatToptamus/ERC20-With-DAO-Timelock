@@ -289,8 +289,7 @@ contract TimelockController is AccessControl {
     /**
      * @dev Checks before execution of an operation's calls.
      */
-     // WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
-     // WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
+
     function _beforeCall(bytes32 id, bytes32 predecessor) private view {
         //require(isOperationReady(id), "TimelockController: operation is not ready");
         require(predecessor == bytes32(0) || isOperationDone(predecessor), "TimelockController: missing dependency");
@@ -299,8 +298,7 @@ contract TimelockController is AccessControl {
     /**
      * @dev Checks after execution of an operation's calls.
      */
-     // WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
-          // WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
+  
     function _afterCall(bytes32 id) private {
         //require(isOperationReady(id), "TimelockController: operation is not ready");
         _timestamps[id] = _DONE_TIMESTAMP;
